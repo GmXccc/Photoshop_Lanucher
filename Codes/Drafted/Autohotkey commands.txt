@@ -1,0 +1,35 @@
+; Set the default action for a single left-click on the tray icon
+Menu, Tray, Default, Open Notepad
+
+#persistent
+
+; Set the tray icon to be the default AutoHotkey icon
+Menu, Tray, Icon, %A_WinDir%\System32\SHELL32.dll, 3
+
+; Create the tray menu
+Menu, Tray, Add, Open Notepad, OpenNotepad
+Menu, Tray, Add, Exit, ExitScript
+
+; Set the default action for a single left-click on the tray icon
+Menu, Tray, Default, Open Menu
+return 
+; Enable double-click action for the tray icon
+SysGet, MonitorCount, MonitorCount
+TrayDC := 0
+SetTimer, TrayDoubleClick, 300
+
+TrayDoubleClick:
+    TrayDC += 1
+    if (TrayDC = 2)
+    {
+        TrayDC := 0
+        ExitScript:
+            ExitApp
+    }
+    SetTimer, TrayDoubleClick, Off
+    SetTimer, TrayDoubleClick, 300
+return
+
+OpenNotepad:
+    Run, Notepad.exe
+return
