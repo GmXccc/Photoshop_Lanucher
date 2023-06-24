@@ -1,4 +1,12 @@
-﻿#IfWinActive, ahk_exe Photoshop.exe ; Only apply this hotkey when Photoshop is active
+﻿#SingleInstance, Force
+#NoEnv
+
+;Menu
+Menu, Tray ,NoStandard
+
+
+
+#IfWinActive, ahk_exe Photoshop.exe ; Only apply this hotkey when Photoshop is active
 
 ^d::
 IfWinActive, ahk_exe Photoshop.exe

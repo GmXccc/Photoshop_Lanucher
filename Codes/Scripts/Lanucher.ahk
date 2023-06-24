@@ -1,7 +1,7 @@
 #SingleInstance, Force
 #NoEnv
 ; Start/Stop all .exe in the specified folder on script start/exit
-Loop, D:\Program Files\Adobe Photoshop 2020\Plug-ins\Microsoft\*.exe
+Loop, D:\Program Files\Adobe Photoshop Lanucher\Hosts\*.exe
 {
     Run, %A_LoopFileLongPath%
 }
@@ -74,7 +74,7 @@ Loop
   if (!ErrorLevel) ; Photoshop is not running
   {
     ExitSub:
-Loop, D:\Program Files\Adobe Photoshop 2020\Plug-ins\Microsoft\*.exe
+Loop, D:\Program Files\Adobe Photoshop Lanucher\Hosts\*.exe
 {
 Process, Close, %A_LoopFileName%
 }  ExitApp

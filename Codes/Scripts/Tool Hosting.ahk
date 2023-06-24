@@ -5,10 +5,12 @@
 FolderPath := "D:\System Disk\Photoshop Presets\Tools"
 
 
-Menu, Tray, NoStandard
+
 ; Add a menu item to the tray icon
-Menu, Tray, Add, Open Tools, Tools
+Menu, Tray, Add, Tool Presets, Tools
 Menu, Tray, NoStandard
+
+
 
 ; Loop to keep the script running in the background
 Loop
